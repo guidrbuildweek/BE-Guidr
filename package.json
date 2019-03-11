@@ -6,7 +6,8 @@
   "author": "Henry Neal <henry.neal0@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

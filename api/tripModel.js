@@ -23,8 +23,7 @@ async function getAll() {
 }
 
 function remove(id) {
-    return db('trips')
-    .where({id}).delete();
+    return db('trips').where({id}).del();
 }
 
 function getById(id) {

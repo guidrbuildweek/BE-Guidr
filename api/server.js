@@ -53,5 +53,18 @@ server.post('/trips', async (req, res) => {
    
   });
 
+  server.delete('/trips/:id', async (req, res) => {
+    try {
+		const trip = await Trips.remove(id= req.params.id );
+		if (!trip) {
+			return res.status(404).json({ error: "No trip found for that Id." });
+		} else {
+			return res.status(204).end();
+		}
+	} catch (error) {
+		res.status(500).json({ error: "Internal error." });
+	}
+  })
+
 
 module.exports = server;

@@ -5,10 +5,10 @@ exports.up = function(knex, Promise) {
       table.string("trip-name");
       table.string("trip-type").unique();
       table.string("location");
-      table.integer("duration-start");
-      table.integer("duration-end");
+      table.date("duration-start");
+      table.date("duration-end");
       table.string("priv-pro");
-      table.integer('date-posted');
+      table.date('date-posted');
   })
 };
 

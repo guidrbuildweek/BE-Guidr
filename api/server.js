@@ -43,7 +43,7 @@ server.post('/trips', async (req, res) => {
     if(!tripType || !tripName || !durationStart || !durationEnd || !privPro || !datePosted || !location)
     return res.status(422).json({message:'you need to provide proper fields'})
     try {
-        const newTrip = await trips.insert(req.body);
+        const newTrip = await Trips.insert(req.body);
         res.status(201).json(newTrip);
     } catch (error) {
         res.status(500).json({message:'internal sever error'})

@@ -36,7 +36,7 @@ async function update(filter, props) {
     .first()
     .update(props, "id");
     const updated = await db('trips')
-    .where({id:updatedId})
+    .where({id: updatedId})
     first();
     
     if(!updatedId) return null;

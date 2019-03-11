@@ -5,5 +5,5 @@ Backend Portion of the Guidr Application
 |-----------------------------------------|--------------------------------------|
 | name, username, password | username, password|
 | https://guidr-be.herokuapp.com/trips | https://guidr-be.herokuapp.com/trips |
-|-----------------------------------------|--------------------------------------|
+| | |
 |/post --> tripType, tripName, durationStart, durationEnd, privPro, datePosted, location|

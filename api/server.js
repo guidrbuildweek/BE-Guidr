@@ -21,7 +21,7 @@ server.use('/', authRoute);
 server.get('/trips', async (req, res) => {
     try {
         const trip = await Trips.getAll()
-        res.status(200).json(rows)
+        res.status(200).json(trip)
     } catch (error) {
         res.status(500).json({message:'internal server error'})
     }
@@ -29,10 +29,12 @@ server.get('/trips', async (req, res) => {
 
 server.get('/trips/:id', async (req, res) => {
     try {
-        const trip = await db('trips')
-        .where(({id: req.params.id}))
-        .first();
-        res.status(200).json(trip);
+        const trip = await Trips.getById(id = req.params.id);
+        if(!trip) {
+            return res.status(404).json({error:"No trip found with this id"});
+        } else {
+            return res.status(200).json(trip);
+        }
     } catch (error) {
         res.status(500).json(error)
     }
@@ -50,6 +52,19 @@ server.post('/trips', async (req, res) => {
     }
    
   });
+
+  server.delete('/trips/:id', async (req, res) => {
+    try {
+		const trip = await Trips.remove(id= req.params.id );
+		if (!trip) {
+			return res.status(404).json({ error: "No trip found for that Id." });
+		} else {
+			return res.status(204).end();
+		}
+	} catch (error) {
+		res.status(500).json({ error: "Internal error." });
+	}
+  })
 
 
 module.exports = server;

@@ -23,12 +23,11 @@ async function getAll() {
 }
 
 function remove(id) {
-    return db('trips')
-    .where({id}).delete();
+    return db('trips').where({id}).del();
 }
 
 function getById(id) {
-    return db('trips').where({id}).first()
+    return db('trips').where({id}).first();
 }
 
 async function update(filter, props) {

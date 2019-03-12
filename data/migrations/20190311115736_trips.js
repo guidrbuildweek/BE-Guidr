@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('trips', table => {
       table.increments();
       table.string("tripName");
-      table.string("tripType").unique();
+      table.string("tripType");
       table.string("location");
       table.date("durationStart");
       table.date("durationEnd");

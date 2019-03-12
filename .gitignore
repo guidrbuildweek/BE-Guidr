@@ -1,4 +1,6 @@
 node_modules
+.env
+git rm env --cached
 git rm env.local --cached
-git rm env.staging --cached
+git rm env.development --cached
 yarn-error.log

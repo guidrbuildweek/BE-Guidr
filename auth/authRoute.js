@@ -37,7 +37,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
     let { username, password, } = req.body;
   
-    Users.findBy({ username })
+    Users.findBy( username )
       .then(user => {
           console.log(user);
         if (user && bcrypt.compareSync(password, user.password)) {

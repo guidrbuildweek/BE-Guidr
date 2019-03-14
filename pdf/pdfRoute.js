@@ -1,5 +1,8 @@
 const fs = require ('fs');
 const PDF = require('pdfkit');
+const express = require("express");
+const router = express.Router();
+const PDF = require('../api/pdfModel');
 
 const guides = [
     {name: 'Susana', tagline:'Experienced trail guide in the pacific northwest, specializing in long intensive excursions.', age: 34, experience:'12' },

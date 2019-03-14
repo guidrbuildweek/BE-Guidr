@@ -4,7 +4,6 @@ const router = express.Router();
 const db = require('../data/dbConfig');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-// const {authenticate} = require('./authenticate');
 const Users = require('../api/userModel');
 const secret = process.env.JWT_SECRET;
 

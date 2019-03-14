@@ -36,6 +36,11 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
+    console.log(req.body)
+    db('users')
+    .then(users => {
+      res.json(users)
+    });
   
     // Users.findBy(username)
     //   .then(user => {

@@ -4,8 +4,6 @@ const express = require("express");
 const router = express.Router();
 // const PDF = require('../api/pdfModel');
 
-
-
 const guides = [
     {name: 'Susana', tagline:'Experienced trail guide in the pacific northwest, specializing in long intensive excursions.', age: 34, experience:'12' },
     {name: 'Jodhi', tagline:'Professional rock climber.  Guiding free solo, dry tooling and bouldering adventures.', age: 27, experience:'5'},

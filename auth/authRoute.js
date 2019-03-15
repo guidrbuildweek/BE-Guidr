@@ -20,7 +20,6 @@ function generateToken(user) {
     return jwt.sign(payload, secret, options);
 }
 
-
 router.post('/register', (req, res) => {
     let user = req.body;
     const hash = bcrypt.hashSync(user.password, 10);

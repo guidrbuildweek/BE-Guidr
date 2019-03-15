@@ -14,7 +14,7 @@ server.use(express.json());
 
 
 server.get("/", (req, res) => {
-    res.json({ message: "👋🌎🌍🌏, root dir sanity check" });
+    res.json({ message: "anity check" });
   });
 
 server.use('/', authRoute);
